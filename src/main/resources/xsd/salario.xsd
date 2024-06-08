@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.cibertec.edu.pe/ws/objects"
+           targetNamespace="http://www.cibertec.edu.pe/ws/objects"
+           elementFormDefault="qualified">
+
+    <!-- Elemento raíz que representa el cálculo del salario semanal -->
+    <xs:element name="GetSalarioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Elemento para representar las horas trabajadas -->
+                <xs:element name="horasTrabajadas" type="xs:int"/>
+                <!-- Elemento para representar la tarifa de salario por hora regular -->
+                <xs:element name="tarifaHoraRegular" type="xs:double"/>
+                <!-- Elemento para representar la tarifa de salario por hora extra -->
+                <xs:element name="tarifaHoraExtra" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Elemento para representar la respuesta del cálculo de salario -->
+    <xs:element name="GetSalarioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Elemento para representar el salario resultante -->
+                <xs:element name="salario" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
